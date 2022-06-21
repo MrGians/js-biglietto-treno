@@ -38,32 +38,46 @@ console.log("Prezzo Biglietto: " + ticketPrice + "€");
 
 
 // #4 Validazione inserimento Chilometri
-if (!(isNaN(userKm)) && userKm > 0) {
+if (!isNaN(userKm) && userKm > 0) {
+
   console.log("KM: è tutto giusto!")
-} else {
-  console.log("KM: hai inserito un NaN nei KM!")
-}
+
 
 // #5 Validazione inserimento età
-if (!(isNaN(userAge)) && userAge > 0) {
+if (!isNaN(userAge) && userAge > 0) {
+
   console.log ("Età: è tutto giusto!")
+  // #6 Calcolo eventuale scontistica del prezzo finale
+  if (userAge <= 18) {
+
+    ticketPrice = ticketPrice - (ticketPrice / 100 * 20);
+    console.log("HAI RICEVUTO -20% di SCONTO!");
+
+  } else if (userAge >= 65) {
+
+    ticketPrice = ticketPrice - (ticketPrice / 100 * 40);
+    console.log("HAI RICEVUTO -40% di SCONTO!");
+  } else {
+    console.log("NON HAI DIRITTO ALLO SCONTO!")
+  }
+
+  // #7 Calcolo prezzo del biglietto * Km utente
+  let ticketFinalPrice = document.getElementById("ticket-final-price");
+  ticketFinalPrice = (ticketPrice * userKm).toFixed(2);
+  console.log("Prezzo Finale del Biglietto: " + ticketFinalPrice + "€");
+
+  
 } else {
   console.log ("Età: hai inserito un NaN nell'età!")
 }
 
-// #6 Calcolo eventuale scontistica del prezzo finale
-if (userAge <= 18) {
-  ticketPrice = ticketPrice - (ticketPrice / 100 * 20);
-  console.log("HAI RICEVUTO -20% di SCONTO!");
-} else if (userAge >= 65) {
-  ticketPrice = ticketPrice - (ticketPrice / 100 * 40);
-  console.log("HAI RICEVUTO -40% di SCONTO!");
+
+} else {
+
+  console.log("KM: hai inserito un NaN nei KM!")
 }
 
-// #7 Calcolo prezzo del biglietto * Km utente
-let ticketFinalPrice = document.getElementById("ticket-final-price");
-ticketFinalPrice = (ticketPrice * userKm).toFixed(2);
-console.log("Prezzo Finale del Biglietto: " + ticketFinalPrice + "€");
+
 
 // #8
 // #9
