@@ -1,0 +1,20 @@
+/* Generics */
+body {background-color: lightskyblue;}
+strong {text-align: right}
+
+
+/* Custom Style */
+.ticket-box {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.row.flex-column {
+  background-color: beige;
+  border: 2px solid lightseagreen;
+}
+
+.row.flex-column [class^="col"] {
+  padding: 10px;
+  border-bottom: 2px solid lightseagreen;
+}
