@@ -67,17 +67,17 @@ if (!isNaN(userAgeValue) && userAgeValue > 0) {
   if (userAgeValue <= 17) {
 
     ticketPriceValue = (ticketPriceValue - (ticketPriceValue / 100 * 20)).toFixed(2);
-    ticketPrice.innerText = ticketPriceValue + "€";
-    ticketDiscount.innerText = ("20%");
+    ticketPrice.innerHTML = `<del class="del-price">0.21€</del> ${ticketPriceValue}€`;
+    ticketDiscount.innerHTML = '<span class="discount-price">20%</span>';
 
   } else if (userAgeValue >= 65) {
 
     ticketPriceValue = (ticketPriceValue - (ticketPriceValue / 100 * 40)).toFixed(2);
-    ticketPrice.innerText = ticketPriceValue + "€";
-    ticketDiscount.innerText = ("40%");
+    ticketPrice.innerHTML = `<del class="del-price">0.21€</del> ${ticketPriceValue}€`;
+    ticketDiscount.innerHTML = '<span class="discount-price">40%</span>';
 
   } else {
-    ticketDiscount.innerText = ("Nessuno Sconto Applicato");
+    ticketDiscount.innerText = "Nessuno Sconto Applicato";
   }
 
 } else {
